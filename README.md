@@ -21,3 +21,8 @@ Then I install and initialized tailwind CSS with vite, all the steps can be view
 Hello,
 <Environment path="/hdri/" files="potsdamer_platz_1k.hdr" />
 Download this hdr file (https://polyhaven.com/a/potsdamer_platz) and place it inside hdri folder inside public folder and in the component add props like this.
+
+valtio is kind of used as a replacement for context
+
+To use framer motion, put the entire part in an animation tag. Use motion.main, motion.header, motion.section, etc.
+Put the animation in the className like = {..slideAnimation('left)}

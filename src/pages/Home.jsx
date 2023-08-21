@@ -1,7 +1,30 @@
-import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useSnapshot } from "valtio";
+import state from "../store"; //used as an alternative to contexts
+import {
+  headContainerAnimation,
+  headContentAnimation,
+  headTextAnimation,
+  slideAnimation,
+} from "../config/motion";
 
 const Home = () => {
-  return <div>Home</div>;
+  const snap = useSnapshot(state);
+  return (
+    <AnimatePresence>
+      {snap.intro && (
+        <motion.section className="home" {...slideAnimation("left")}>
+          <motion.header>
+            <img
+              src="./threejs.png"
+              alt="logo"
+              className="w-8 h08 object-contain"
+            />
+          </motion.header>
+        </motion.section>
+      )}
+    </AnimatePresence>
+  );
 };
 
 export default Home;
